@@ -1,4 +1,6 @@
-const playerSelection = 'rock';
+function playerPlay() {
+	return prompt('Select a hand');
+}
 
 function computerPlay() {
 	const computerChoice = Math.floor(Math.random() * 3);
@@ -13,7 +15,7 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  properPlayerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+  properPlayerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
   console.log(`Player selection: ${properPlayerSelection}. Computer selection: ${computerSelection}.`);
 	if (properPlayerSelection === computerSelection) {
 		return `Draw! Both players played ${properPlayerSelection}`;
@@ -30,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game(numGames) {
 	for (let i = 1; i <= numGames; i++) {
-    console.log('Game: ' + i + ': ' + playRound(playerSelection, computerPlay()));
+    console.log('Game: ' + i + ': ' + playRound(playerPlay(), computerPlay()));
 	}
 }
 
