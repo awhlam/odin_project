@@ -1,7 +1,3 @@
-function playerPlay() {
-	return prompt('Select a hand');
-}
-
 function computerPlay() {
 	const computerChoice = Math.floor(Math.random() * 3);
 	switch (computerChoice) {
@@ -30,10 +26,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game(numGames) {
-	for (let i = 1; i <= numGames; i++) {
-    console.log('Game: ' + i + ': ' + playRound(playerPlay(), computerPlay()));
-	}
+function game(playerChoice) {
+  console.log(playRound(playerChoice, computerPlay()));
 }
-
-game(5);
